@@ -1,8 +1,8 @@
 import React from 'react';
 import { 
   QuestionMarkCircleIcon, RefreshIcon, SearchIcon, ShareIcon, AcademicCapIcon, 
-  LocationMarkerIcon, PhoneIcon, MailIcon, ClockIcon, BookOpenIcon, 
-  NewspaperIcon, DatabaseIcon, SparklesIcon, DocumentTextIcon, ChartBarIcon,
+  LocationMarkerIcon, PhoneIcon, MailIcon, ClockIcon, 
+  SparklesIcon, DocumentTextIcon, ChartBarIcon,
   UsersIcon, CalendarIcon
 } from './components/icons';
 
@@ -11,7 +11,7 @@ export const navLinks = [
   { name: 'About Us', href: '#about' },
   { name: 'College of Law', href: '#college-of-law' },
   { name: 'Library Services', href: '#services' },
-  { name: 'Virtual Library', href: '#virtual-library' },
+  { name: 'Digital Resources', href: '#digital-resources' },
   { name: 'Blog', href: '#blog' },
   { name: 'AI Tools', href: '#ai-tools' },
   { name: 'Community', href: '#community' },
@@ -60,192 +60,432 @@ export const collegeOfLawData = {
 
 export const libraryServices = [
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(QuestionMarkCircleIcon, { className: "w-8 h-8 text-brand-purple" }),
     title: 'Reference Services',
     description: 'Expert assistance with legal research, citation guidance, and resource recommendations.',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(RefreshIcon, { className: "w-8 h-8 text-brand-gold" }),
     title: 'Circulation Services',
     description: 'Book lending, renewals, reservations, and digital resource access management.',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(SearchIcon, { className: "w-8 h-8 text-brand-purple-dark" }),
     title: 'Research Assistance',
     description: 'Personalized research support, database training, and methodology guidance.',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(ShareIcon, { className: "w-8 h-8 text-brand-purple" }),
     title: 'Interlibrary Loans',
     description: 'Access resources from partner institutions and global library networks.',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(AcademicCapIcon, { className: "w-8 h-8 text-brand-gold" }),
     title: 'Information Literacy',
     description: 'Training programs on research skills, digital literacy, and academic writing.',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(LocationMarkerIcon, { className: "w-8 h-8 text-brand-purple-dark" }),
     title: 'Study Spaces',
     description: 'Individual and group study rooms, quiet zones, and collaborative workspaces.',
   },
 ];
 
-export const virtualLibraryResources = [
+// Digital Resources Data
+export const opacLink = "https://chrislanduniversitylibrary.librarika.com/search";
+
+export const openAccessEbooks = [
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(BookOpenIcon, { className: "w-8 h-8 text-white" }),
-    title: 'eBooks',
-    description: 'Access over 25,000 legal eBooks from leading publishers including case law, statutes, and academic texts.',
-    items: ['Constitutional Law Collections', 'International Law Resources', 'Commercial Law Texts', 'Human Rights Documentation'],
-    buttonText: 'Browse eBooks',
+    title: 'Nigerian Constitutional Law and Practice',
+    author: 'Dr. John Adebayo',
+    year: 2023,
+    publisher: 'Lagos University Press',
+    category: 'Constitutional Law',
+    coverUrl: 'https://picsum.photos/300/400?image=11',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(NewspaperIcon, { className: "w-8 h-8 text-white" }),
-    title: 'eJournals',
-    description: 'Current and archived legal journals from top-tier publishers and academic institutions worldwide.',
-    items: ['Harvard Law Review', 'Yale Law Journal', 'African Law Review', 'International Legal Materials'],
-    buttonText: 'Access Journals',
+    title: 'Commercial Law in Nigeria: Cases and Materials',
+    author: 'Prof. Fatima Bello',
+    year: 2022,
+    publisher: 'NOUN eCourseware',
+    category: 'Commercial Law',
+    coverUrl: 'https://picsum.photos/300/400?image=12',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(DatabaseIcon, { className: "w-8 h-8 text-white" }),
-    title: 'Databases',
-    description: 'Comprehensive legal databases for case law research, statutory analysis, and legal precedents.',
-    items: ['LexisNexis Academic', 'Westlaw Campus Research', 'HeinOnline Law Library', 'African Legal Database'],
-    buttonText: 'Search Databases',
+    title: 'A Guide to Intellectual Property in Africa',
+    author: 'A. Okoro & C. Eze',
+    year: 2024,
+    publisher: 'ABUAD Press',
+    category: 'Intellectual Property',
+    coverUrl: 'https://picsum.photos/300/400?image=13',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
   },
+  {
+    title: 'Environmental Law and Policy in Nigeria',
+    author: 'Dr. Amina Sani',
+    year: 2021,
+    publisher: 'DOAB',
+    category: 'Environmental Law',
+    coverUrl: 'https://picsum.photos/300/400?image=14',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'An Introduction to Nigerian Criminal Law',
+    author: 'Justice T. Adekunle',
+    year: 2023,
+    publisher: 'NIALS Press',
+    category: 'Criminal Law',
+    coverUrl: 'https://picsum.photos/300/400?image=15',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Comparative Legal Research Methods',
+    author: 'Dr. Emily White',
+    year: 2022,
+    publisher: 'CALI eLangdell Press',
+    category: 'Legal Research',
+    coverUrl: 'https://picsum.photos/300/400?image=16',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Human Rights Law in Nigeria',
+    author: 'Prof. Chidi Odinkalu',
+    year: 2023,
+    publisher: 'SSRN',
+    category: 'Human Rights',
+    coverUrl: 'https://picsum.photos/300/400?image=21',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'The Law of Evidence in Nigeria',
+    author: 'Yemi Osinbajo',
+    year: 2021,
+    publisher: 'Lagos State Ministry of Justice',
+    category: 'Law of Evidence',
+    coverUrl: 'https://picsum.photos/300/400?image=22',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Corporate Governance in Nigeria: Law and Practice',
+    author: 'Dr. Fabian Ajogwu',
+    year: 2022,
+    publisher: 'C&I Publishers',
+    category: 'Corporate Governance',
+    coverUrl: 'https://picsum.photos/300/400?image=23',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Oil and Gas Law in Nigeria',
+    author: 'G. K. Etikerentse',
+    year: 2021,
+    publisher: 'Malthouse Press',
+    category: 'Energy Law',
+    coverUrl: 'https://picsum.photos/300/400?image=24',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Principles of Civil Procedure in Nigeria',
+    author: 'Fidelis Nwadialo',
+    year: 2024,
+    publisher: 'Longman Nigeria',
+    category: 'Civil Procedure',
+    coverUrl: 'https://picsum.photos/300/400?image=25',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Contemporary Issues in Nigerian Family Law',
+    author: 'Isabella Okagbue',
+    year: 2022,
+    publisher: 'Odade Publishers',
+    category: 'Family Law',
+    coverUrl: 'https://picsum.photos/300/400?image=26',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Cybercrime and Digital Evidence in Nigeria',
+    author: 'Dr. Aisha Bello',
+    year: 2023,
+    publisher: 'TechLaw Press',
+    category: 'Tech Law',
+    coverUrl: 'https://picsum.photos/300/400?image=31',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Maritime Law and Admiralty Jurisdiction',
+    author: 'Capt. (Dr.) Jide Coker',
+    year: 2022,
+    publisher: 'Ocean Legal Publishers',
+    category: 'Maritime Law',
+    coverUrl: 'https://picsum.photos/300/400?image=32',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Alternative Dispute Resolution: A Nigerian Perspective',
+    author: 'Chief Bola Ajibola',
+    year: 2021,
+    publisher: 'NCMG Publishers',
+    category: 'ADR',
+    coverUrl: 'https://picsum.photos/300/400?image=33',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Nigerian Law of Torts: A Modern Approach',
+    author: 'Prof. K. Abayomi',
+    year: 2024,
+    publisher: 'University of Ibadan Press',
+    category: 'Law of Torts',
+    coverUrl: 'https://picsum.photos/300/400?image=34',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'International Humanitarian Law and Nigeria',
+    author: 'Femi Falana (SAN)',
+    year: 2023,
+    publisher: 'Praxis Centre',
+    category: 'International Law',
+    coverUrl: 'https://picsum.photos/300/400?image=35',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'The Nigerian Judge\'s Companion',
+    author: 'Justice A. F. Ademola',
+    year: 2022,
+    publisher: 'NJI Publications',
+    category: 'Jurisprudence',
+    coverUrl: 'https://picsum.photos/300/400?image=36',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Taxation Law and Practice in Nigeria',
+    author: 'Prof. M. T. Abdulrazaq',
+    year: 2021,
+    publisher: 'CITN Press',
+    category: 'Taxation Law',
+    coverUrl: 'https://picsum.photos/300/400?image=37',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Media Law and Ethics in the Digital Age',
+    author: 'Dr. Ngozi Okonjo',
+    year: 2024,
+    publisher: 'Pan-Atlantic University Press',
+    category: 'Media Law',
+    coverUrl: 'https://picsum.photos/300/400?image=38',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'A Handbook on Banking and Negotiable Instruments',
+    author: 'Prof. C. O. Adekoya',
+    year: 2022,
+    publisher: 'CIBN Press',
+    category: 'Banking Law',
+    coverUrl: 'https://picsum.photos/300/400?image=39',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Election Petition Law and Practice in Nigeria',
+    author: 'Wole Olanipekun (SAN)',
+    year: 2023,
+    publisher: 'LexisNexis Nigeria',
+    category: 'Constitutional Law',
+    coverUrl: 'https://picsum.photos/300/400?image=40',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Land Law and Administration in Nigeria',
+    author: 'Prof. I. O. Smith',
+    year: 2021,
+    publisher: 'Ecowatch Publications',
+    category: 'Property Law',
+    coverUrl: 'https://picsum.photos/300/400?image=41',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Intellectual Property Law for Creatives',
+    author: 'Adaeze Nwosu',
+    year: 2024,
+    publisher: 'Creative Commons NG',
+    category: 'Intellectual Property',
+    coverUrl: 'https://picsum.photos/300/400?image=42',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+];
+
+export const ebookCategories = ['All', ...Array.from(new Set(openAccessEbooks.map(b => b.category)))];
+
+export const openAccessEjournals = [
+  { name: 'ABUAD Law Journal', url: 'https://www.abuad.edu.ng/abuad-law-journal/', description: 'A peer-reviewed journal from Afe Babalola University, focusing on Nigerian and African law.' },
+  { name: 'NIALS Journals', url: 'https://nials.edu.ng/index.php/journals/', description: 'A collection of specialized journals from the Nigerian Institute of Advanced Legal Studies.' },
+  { name: 'Journal of African Law (Cambridge Core)', url: 'https://www.cambridge.org/core/journals/journal-of-african-law', description: 'Provides access to open articles on legal issues across the African continent.' },
+  { name: 'Directory of Open Access Journals (DOAJ)', url: 'https://doaj.org/search?q=law', description: 'A comprehensive index to discover specialized Open Access law journals globally.' },
+];
+
+export const openDatabases = [
+    { name: 'NigerianLawGuru.com', url: 'https://nigerianlawguru.com/', description: 'Contains Articles, Caselaw Digests, and Legislations—a key Nigerian resource.' },
+    { name: 'SSRN (Social Science Research Network)', url: 'https://www.ssrn.com/index.cfm/en/ssrn-law/', description: 'Repository for scholarly papers, vital for academic research.' },
+    { name: 'Legal Information Institute (LII)', url: 'https://www.law.cornell.edu/', description: 'Free access to U.S. law, useful for comparative law analysis.' },
+    { name: 'Justia', url: 'https://www.justia.com/', description: 'Provides free access to U.S. legal information, including cases and codes.' },
+];
+
+export const subscribedDatabases = [
+    { name: 'WLR (Weekly Law Reports)', url: 'https://nwlronline.com/', description: 'Institutional login required for access to Nigerian Weekly Law Reports.' },
+    { name: 'LEGALPEDIA', url: 'https://legalpediaresources.com/', description: 'Institutional subscription for comprehensive Nigerian legal resources.' },
+    { name: 'LAW PAVILION', url: 'https://primsol.lawpavilion.com/?sect=signin', description: 'Institutional access to Law Pavilion\'s electronic law reports and analytics.' },
+    { name: 'HEINONLINE', url: 'https://heinonline.org/HOL/login-hol', description: 'Premier online database containing more than 180 million pages of legal history.' },
 ];
 
 export const aiTools = [
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(SparklesIcon, { className: "w-8 h-8 text-brand-purple" }),
-    title: 'Smart Search',
-    description: 'AI-powered search that understands context and intent.',
+    title: 'AI-Powered Search',
+    description: 'Discover relevant resources faster with semantic search and intelligent recommendations.',
+    link: '#',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(DocumentTextIcon, { className: "w-8 h-8 text-brand-gold" }),
-    title: 'Document Analysis',
-    description: 'Automated document summarization and key point extraction.',
+    title: 'Automated Summarization',
+    description: 'Get concise summaries of lengthy legal documents and articles in seconds.',
+    link: '#',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(ChartBarIcon, { className: "w-8 h-8 text-brand-purple-dark" }),
-    title: 'Usage Analytics',
-    description: 'Intelligent insights into resource usage and trends.',
+    title: 'Research Trend Analysis',
+    description: 'Analyze legal trends and scholarly output with AI-driven data visualization tools.',
+    link: '#',
+  },
+];
+
+export const legalAiTools = [
+  {
+    name: 'Casetext (CoCounsel)',
+    description: 'AI legal assistant for research, document review, and drafting legal memos.',
+    link: 'https://casetext.com/cocounsel/'
+  },
+  {
+    name: 'Lexis+ AI',
+    description: 'Offers generative AI for conversational search, drafting, and summarizing legal documents.',
+    link: 'https://www.lexisnexis.com/en-us/products/lexis-plus/ai.page'
+  },
+  {
+    name: 'vLex (Vincent AI)',
+    description: 'A global legal research platform with an AI assistant that can answer legal questions and build arguments.',
+    link: 'https://vlex.com/vincent-ai'
+  },
+  {
+    name: 'Spellbook',
+    description: 'An AI contract drafting tool that integrates with Microsoft Word to suggest language and identify missing clauses.',
+    link: 'https://www.spellbook.legal/'
+  },
+  {
+    name: 'Clearbrief',
+    description: 'An AI-powered writing platform that verifies facts and citations in legal documents.',
+    link: 'https://www.clearbrief.com/'
+  },
+  {
+    name: 'Kira Systems',
+    description: 'A leading tool for AI-powered contract analysis, primarily used for M&A due diligence.',
+    link: 'https://www.litera.com/products/legal/kira/'
+  },
+  {
+    name: 'DISCO',
+    description: 'A cloud-native e-discovery solution that uses AI to accelerate document review, search, and quality control.',
+    link: 'https://www.csdisco.com/'
   },
 ];
 
 export const blogPosts = [
-    {
-        imageUrl: 'https://picsum.photos/400/300?image=1074',
-        category: 'Research Tips',
-        title: 'Advanced Legal Research Techniques for 2024',
-        excerpt: 'Discover the latest methodologies and tools for conducting comprehensive legal research in the digital age.',
-        date: 'March 15, 2024',
-    },
-    {
-        imageUrl: 'https://picsum.photos/400/300?image=1075',
-        category: 'Technology',
-        title: 'Navigating Our New Digital Platform',
-        excerpt: 'A comprehensive guide to using our enhanced digital library platform and all its new features.',
-        date: 'March 10, 2024',
-    },
-    {
-        imageUrl: 'https://picsum.photos/400/300?image=24',
-        category: 'Student Success',
-        title: 'Maximizing Your Study Time at the Library',
-        excerpt: 'Tips and strategies for effective studying and research in our library spaces.',
-        date: 'March 5, 2024',
-    }
+  {
+    title: 'Navigating HeinOnline for Nigerian Legal Research',
+    category: 'Research Tips',
+    excerpt: 'A step-by-step guide to leveraging HeinOnline\'s vast database for your academic work.',
+    date: 'October 26, 2023',
+    imageUrl: 'https://picsum.photos/400/250?image=101',
+  },
+  {
+    title: 'The Rise of AI in Legal Practice: A Librarian\'s View',
+    category: 'Technology',
+    excerpt: 'Exploring the impact of artificial intelligence on legal research and the role of law librarians.',
+    date: 'October 15, 2023',
+    imageUrl: 'https://picsum.photos/400/250?image=102',
+  },
+  {
+    title: 'New Acquisitions: Key Texts in Environmental Law',
+    category: 'Library News',
+    excerpt: 'Discover the latest additions to our collection focusing on environmental law in West Africa.',
+    date: 'September 30, 2023',
+    imageUrl: 'https://picsum.photos/400/250?image=103',
+  },
 ];
 
 export const communityFeatures = [
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(UsersIcon, { className: "w-8 h-8 text-brand-gold" }),
     title: 'Discussion Forums',
-    description: 'Engage in meaningful discussions about legal topics, share insights, and learn from peers.',
+    description: 'Engage in moderated discussions on various legal topics and research challenges.',
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(ShareIcon, { className: "w-8 h-8 text-brand-gold" }),
-    title: 'Resource Sharing',
-    description: 'Share research findings, recommend resources, and collaborate on projects.',
-  },
-  {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(CalendarIcon, { className: "w-8 h-8 text-brand-gold" }),
-    title: 'Events & Workshops',
-    description: 'Stay informed about upcoming seminars, workshops, and networking events.',
-  }
+    title: 'Events & Webinars',
+    description: 'Participate in online workshops, guest lectures, and training sessions.',
+  },
+  {
+    icon: React.createElement(ShareIcon, { className: "w-8 h-8 text-brand-gold" }),
+    title: 'Shared Collections',
+    description: 'Collaborate on curating and sharing specialized resource lists and bibliographies.',
+  },
 ];
-
 
 export const contactInfo = [
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
     icon: React.createElement(LocationMarkerIcon, { className: "w-6 h-6 text-brand-purple" }),
-    title: 'Visit Us',
-    details: ['Chrisland University Campus', 'Abeokuta, Ogun State, Nigeria'],
+    title: 'Address',
+    details: ['Chrisland University, PMB 2131, Abeokuta, Ogun State, Nigeria'],
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(PhoneIcon, { className: "w-6 h-6 text-brand-gold" }),
-    title: 'Call Us',
-    details: ['+234 (0) 803 123 4567', '+234 (0) 701 234 5678'],
+    icon: React.createElement(PhoneIcon, { className: "w-6 h-6 text-brand-purple" }),
+    title: 'Phone',
+    details: ['+234 802 300 0000', '+234 803 123 4567'],
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(MailIcon, { className: "w-6 h-6 text-brand-purple-dark" }),
-    title: 'Email Us',
-    details: ['lawlibrary@chrislanduniversity.edu.ng', 'support@chrislandlaw.edu'],
+    icon: React.createElement(MailIcon, { className: "w-6 h-6 text-brand-purple" }),
+    title: 'Email',
+    details: ['lawlibrary@chrislanduniversity.edu.ng'],
   },
   {
-    // FIX: Replaced JSX with React.createElement to be compatible with .ts files.
-    icon: React.createElement(ClockIcon, { className: "w-6 h-6 text-green-600" }),
+    icon: React.createElement(ClockIcon, { className: "w-6 h-6 text-brand-purple" }),
     title: 'Opening Hours',
-    details: ['Monday - Friday: 8:00 AM - 10:00 PM', 'Saturday - Sunday: 10:00 AM - 6:00 PM'],
+    details: ['Mon - Fri: 8am - 10pm', 'Sat: 10am - 6pm'],
   },
 ];
 
 export const footerLinks = [
-    {
-        title: 'Quick Links',
-        links: [
-            { name: 'Home', href: '#home' },
-            { name: 'About Us', href: '#about' },
-            { name: 'College of Law', href: '#college-of-law' },
-            { name: 'Library Services', href: '#services' },
-            { name: 'Virtual Library', href: '#virtual-library' },
-            { name: 'Blog', href: '#blog' },
-        ]
-    },
-    {
-        title: 'Resources',
-        links: [
-            { name: 'eBooks', href: '#virtual-library' },
-            { name: 'eJournals', href: '#virtual-library' },
-            { name: 'Databases', href: '#virtual-library' },
-            { name: 'AI Tools', href: '#ai-tools' },
-            { name: 'Community', href: '#community' },
-        ]
-    },
-    {
-        title: 'Contact Info',
-        links: [
-            { name: 'Abeokuta, Ogun State', href: '#contact' },
-            { name: '+234 (0) 803 123 4567', href: 'tel:+2348031234567' },
-            { name: 'lawlibrary@chrisland.edu.ng', href: 'mailto:lawlibrary@chrisland.edu.ng' },
-        ]
-    }
+  {
+    title: 'Quick Links',
+    links: [
+      { name: 'Home', href: '#home' },
+      { name: 'About Us', href: '#about' },
+      { name: 'Services', href: '#services' },
+      { name: 'Contact', href: '#contact' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { name: 'OPAC', href: '#' },
+      { name: 'Databases', href: '#' },
+      { name: 'eJournals', href: '#' },
+      { name: 'eBooks', href: '#' },
+    ],
+  },
+  {
+    title: 'University',
+    links: [
+      { name: 'Main Website', href: '#' },
+      { name: 'Admissions', href: '#' },
+      { name: 'Academics', href: '#' },
+      { name: 'FAQs', href: '#' },
+    ],
+  },
 ];

@@ -5,7 +5,7 @@ import Stats from './components/Stats';
 import About from './components/About';
 import CollegeOfLaw from './components/CollegeOfLaw';
 import LibraryServices from './components/LibraryServices';
-import VirtualLibrary from './components/VirtualLibrary';
+import DigitalResources from './components/VirtualLibrary';
 import AITools from './components/AITools';
 import Blog from './components/Blog';
 import Community from './components/Community';
@@ -30,12 +30,10 @@ const App: React.FC = () => {
         <div id="services">
           <LibraryServices />
         </div>
-        <div id="virtual-library">
-          <VirtualLibrary />
+        <div id="digital-resources">
+          <DigitalResources />
         </div>
-        <div id="ai-tools">
-          <AITools />
-        </div>
+        <AITools />
         <div id="blog">
           <Blog />
         </div>
