@@ -54,10 +54,35 @@ const DigitalResources: React.FC = () => {
             </div>
         );
       case 'eJournals':
+        return (
+          <div>
+            <h3 className="text-2xl font-bold text-brand-purple-dark text-center mb-8">Open Access eJournals</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {openAccessEjournals.map(journal => (
+                <div key={journal.name} className="bg-white p-6 rounded-lg shadow-lg flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-left">
+                  <div className="flex items-start mb-4">
+                    <div className="p-3 bg-brand-lilac rounded-full mr-4 shrink-0">
+                      <NewspaperIcon className="w-8 h-8 text-brand-purple" />
+                    </div>
+                    <h4 className="text-lg font-bold text-brand-purple-dark">{journal.name}</h4>
+                  </div>
+                  <p className="text-gray-600 flex-grow mb-6">{journal.description}</p>
+                  <a 
+                    href={journal.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="mt-auto w-full flex items-center justify-center bg-brand-gold hover:bg-yellow-600 text-white font-bold py-2.5 px-4 rounded-lg transition-all duration-300 transform group-hover:scale-105"
+                  >
+                    Access Journal <ExternalLinkIcon className="w-5 h-5 ml-2" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
       case 'Open Databases':
       case 'Subscribed Databases':
         const dataMap = {
-          'eJournals': { title: 'Open Access eJournals', data: openAccessEjournals, icon: <NewspaperIcon className="w-8 h-8 text-brand-purple" /> },
           'Open Databases': { title: 'Open Access Databases', data: openDatabases, icon: <DatabaseIcon className="w-8 h-8 text-brand-gold" /> },
           'Subscribed Databases': { title: 'Subscribed Institutional Databases', data: subscribedDatabases, icon: <DatabaseIcon className="w-8 h-8 text-brand-purple-dark" /> },
         };
