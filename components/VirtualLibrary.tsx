@@ -1,9 +1,8 @@
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import {
   opacLink,
   openAccessEbooks,
-  ebookCategories,
   openAccessEjournals,
   openDatabases,
   subscribedDatabases
@@ -15,62 +14,6 @@ type Tab = 'OPAC' | 'eBooks' | 'eJournals' | 'Open Databases' | 'Subscribed Data
 const DigitalResources: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('eBooks');
   
-  // eBook filter input states
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedYear, setSelectedYear] = useState<number | string>('all');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [author, setAuthor] = useState('');
-  const [publisher, setPublisher] = useState('');
-
-  // State for applied filters
-  const [appliedFilters, setAppliedFilters] = useState({
-    searchTerm: '',
-    selectedYear: 'all' as number | string,
-    selectedCategory: 'All',
-    author: '',
-    publisher: '',
-  });
-
-  const handleFilterSubmit = () => {
-    setAppliedFilters({
-      searchTerm,
-      selectedYear,
-      selectedCategory,
-      author,
-      publisher
-    });
-  };
-
-  const handleClearFilters = () => {
-    setSearchTerm('');
-    setSelectedYear('all');
-    setSelectedCategory('All');
-    setAuthor('');
-    setPublisher('');
-    setAppliedFilters({
-      searchTerm: '',
-      selectedYear: 'all',
-      selectedCategory: 'All',
-      author: '',
-      publisher: '',
-    });
-  };
-
-  const filteredEbooks = useMemo(() => {
-    return openAccessEbooks.filter(book => {
-      const titleMatch = book.title.toLowerCase().includes(appliedFilters.searchTerm.toLowerCase());
-      const yearMatch = book.year >= 2021 && (appliedFilters.selectedYear === 'all' || book.year === appliedFilters.selectedYear);
-      const categoryMatch = appliedFilters.selectedCategory === 'All' || book.category === appliedFilters.selectedCategory;
-      const authorMatch = book.author.toLowerCase().includes(appliedFilters.author.toLowerCase());
-      const publisherMatch = book.publisher.toLowerCase().includes(appliedFilters.publisher.toLowerCase());
-
-      return titleMatch && yearMatch && categoryMatch && authorMatch && publisherMatch;
-    });
-  }, [appliedFilters]);
-
-  const publicationYears = ['all', ...Array.from(new Set(openAccessEbooks.map(b => b.year)))].sort((a,b) => (a === 'all' ? -1 : b === 'all' ? 1 : (b as number) - (a as number)));
-
-
   const tabs: Tab[] = ['OPAC', 'eBooks', 'eJournals', 'Open Databases', 'Subscribed Databases'];
 
   const renderContent = () => {
@@ -89,38 +32,9 @@ const DigitalResources: React.FC = () => {
       case 'eBooks':
         return (
             <div>
-              {/* Filter Section */}
-              <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
-                  <input type="text" placeholder="Filter by Title..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-purple focus:border-brand-purple bg-white text-gray-900" />
-                  <input type="text" placeholder="Filter by Author..." value={author} onChange={e => setAuthor(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-purple focus:border-brand-purple bg-white text-gray-900" />
-                  <input type="text" placeholder="Filter by Publisher..." value={publisher} onChange={e => setPublisher(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-purple focus:border-brand-purple bg-white text-gray-900" />
-                  <select value={selectedYear} onChange={e => setSelectedYear(e.target.value === 'all' ? 'all' : Number(e.target.value))} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-purple focus:border-brand-purple bg-white">
-                    {publicationYears.map(year => <option key={year} value={year}>{year === 'all' ? 'All Years' : year}</option>)}
-                  </select>
-                  <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-purple focus:border-brand-purple bg-white">
-                    {ebookCategories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
-                  </select>
-                </div>
-                <div className="flex justify-end space-x-4">
-                    <button
-                        onClick={handleClearFilters}
-                        className="bg-slate-200 hover:bg-slate-300 text-gray-800 font-bold py-2 px-6 rounded-lg transition-colors"
-                    >
-                        Clear
-                    </button>
-                    <button
-                        onClick={handleFilterSubmit}
-                        className="bg-brand-gold hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg transition-colors"
-                    >
-                        Apply Filters
-                    </button>
-                </div>
-              </div>
-              
               {/* eBooks Grid */}
               <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {filteredEbooks.map(book => (
+                {openAccessEbooks.map(book => (
                   <div key={book.title} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col group">
                     <img src={book.coverUrl} alt={book.title} className="w-full h-64 object-cover" />
                     <div className="p-4 flex flex-col flex-grow">
@@ -136,7 +50,7 @@ const DigitalResources: React.FC = () => {
                   </div>
                 ))}
               </div>
-              {filteredEbooks.length === 0 && <p className="text-center text-gray-500 mt-8">No eBooks found matching your criteria.</p>}
+              {openAccessEbooks.length === 0 && <p className="text-center text-gray-500 mt-8">No eBooks found.</p>}
             </div>
         );
       case 'eJournals':

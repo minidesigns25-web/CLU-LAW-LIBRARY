@@ -13,20 +13,28 @@ const Blog: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <div key={post.title} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-              <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
+            <a
+              key={post.title}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
+              <div className="overflow-hidden">
+                <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
               <div className="p-6 flex flex-col flex-grow text-left">
                 <p className="text-brand-purple font-semibold text-sm mb-2">{post.category}</p>
                 <h3 className="text-xl font-bold text-brand-purple-dark mb-3 flex-grow">{post.title}</h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
                 <div className="flex justify-between items-center mt-auto">
                   <p className="text-sm text-gray-500">{post.date}</p>
-                  <a href="#" className="font-semibold text-brand-purple-dark hover:text-brand-gold flex items-center group">
+                  <div className="font-semibold text-brand-purple-dark group-hover:text-brand-gold flex items-center transition-colors">
                     Read More <ArrowRightIcon className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

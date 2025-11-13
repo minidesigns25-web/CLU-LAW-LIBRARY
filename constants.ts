@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { 
   QuestionMarkCircleIcon, RefreshIcon, SearchIcon, ShareIcon, AcademicCapIcon, 
@@ -311,15 +313,72 @@ export const openAccessEbooks = [
     coverUrl: 'https://picsum.photos/300/400?image=42',
     downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
   },
+  {
+    title: 'Legal Drafting and Conveyancing in Nigeria',
+    author: 'P. A. O. Oluyede',
+    year: 2022,
+    publisher: 'Evans Brothers',
+    category: 'Legal Drafting',
+    coverUrl: 'https://picsum.photos/300/400?image=43',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Anatomy of Corruption in Nigeria',
+    author: 'P. A. O. Oluyede',
+    year: 2021,
+    publisher: 'NOUN Press',
+    category: 'Jurisprudence',
+    coverUrl: 'https://picsum.photos/300/400?image=44',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'The Nigerian Law of Insurance',
+    author: 'J. O. Irukwu',
+    year: 2023,
+    publisher: 'Witherby Publishing',
+    category: 'Commercial Law',
+    coverUrl: 'https://picsum.photos/300/400?image=45',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Freedom of Information Law in Nigeria',
+    author: 'Access to Information Network',
+    year: 2022,
+    publisher: 'Media Rights Agenda',
+    category: 'Human Rights',
+    coverUrl: 'https://picsum.photos/300/400?image=46',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'Sports Law and Practice in Nigeria',
+    author: 'Dr. O. A. Amu',
+    year: 2024,
+    publisher: 'National Institute for Sports',
+    category: 'Sport Law',
+    coverUrl: 'https://picsum.photos/300/400?image=47',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
+  {
+    title: 'The Law and Practice of International Commercial Arbitration',
+    author: 'Redfern & Hunter',
+    year: 2023,
+    publisher: 'Oxford University Press',
+    category: 'ADR',
+    coverUrl: 'https://picsum.photos/300/400?image=48',
+    downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+  },
 ];
 
-export const ebookCategories = ['All', ...Array.from(new Set(openAccessEbooks.map(b => b.category)))];
 
 export const openAccessEjournals = [
   { name: 'ABUAD Law Journal', url: 'https://www.abuad.edu.ng/abuad-law-journal/', description: 'A peer-reviewed journal from Afe Babalola University, focusing on Nigerian and African law.' },
   { name: 'NIALS Journals', url: 'https://nials.edu.ng/index.php/journals/', description: 'A collection of specialized journals from the Nigerian Institute of Advanced Legal Studies.' },
   { name: 'Journal of African Law (Cambridge Core)', url: 'https://www.cambridge.org/core/journals/journal-of-african-law', description: 'Provides access to open articles on legal issues across the African continent.' },
   { name: 'Directory of Open Access Journals (DOAJ)', url: 'https://doaj.org/search?q=law', description: 'A comprehensive index to discover specialized Open Access law journals globally.' },
+  { name: 'African Journal of International and Comparative Law', url: 'https://www.euppublishing.com/loi/ajicl', description: 'Leading journal on public and private international law and comparative legal studies in Africa.' },
+  { name: 'University of Ibadan Law Journal', url: 'https://uilj.ui.edu.ng/', description: 'Bi-annual publication covering a wide range of contemporary legal issues.' },
+  { name: 'Law and Society Review', url: 'https://onlinelibrary.wiley.com/journal/15405893', description: 'Features interdisciplinary articles on the relationship between law and society.' },
+  { name: 'Global Jurist', url: 'https://www.degruyter.com/journal/key/gj/html', description: 'Publishes articles on a wide range of legal topics with a global perspective.' },
 ];
 
 export const openDatabases = [
@@ -327,6 +386,12 @@ export const openDatabases = [
     { name: 'SSRN (Social Science Research Network)', url: 'https://www.ssrn.com/index.cfm/en/ssrn-law/', description: 'Repository for scholarly papers, vital for academic research.' },
     { name: 'Legal Information Institute (LII)', url: 'https://www.law.cornell.edu/', description: 'Free access to U.S. law, useful for comparative law analysis.' },
     { name: 'Justia', url: 'https://www.justia.com/', description: 'Provides free access to U.S. legal information, including cases and codes.' },
+    { name: 'WorldLII', url: 'http://www.worldlii.org/', description: 'Free, independent and non-profit global legal research facility.' },
+    { name: 'AfricanLII', url: 'https://africanlii.org/', description: 'Provides free access to law from across the African continent.' },
+    { name: 'Laws.ng', url: 'https://laws.ng/', description: 'Digital collection of Nigerian laws, regulations, and legal documents.' },
+    { name: 'Google Scholar', url: 'https://scholar.google.com/', description: 'Provides a simple way to broadly search for scholarly literature across many disciplines.' },
+    { name: 'FindLaw', url: 'https://www.findlaw.com/', description: 'A comprehensive legal information website with case law, statutes, and legal news.' },
+    { name: 'BAILII', url: 'https://www.bailii.org/', description: 'British and Irish Legal Information Institute, providing access to primary legal materials.' },
 ];
 
 export const subscribedDatabases = [
@@ -334,6 +399,8 @@ export const subscribedDatabases = [
     { name: 'LEGALPEDIA', url: 'https://legalpediaresources.com/', description: 'Institutional subscription for comprehensive Nigerian legal resources.' },
     { name: 'LAW PAVILION', url: 'https://primsol.lawpavilion.com/?sect=signin', description: 'Institutional access to Law Pavilion\'s electronic law reports and analytics.' },
     { name: 'HEINONLINE', url: 'https://heinonline.org/HOL/login-hol', description: 'Premier online database containing more than 180 million pages of legal history.' },
+    { name: 'ProQuest', url: 'https://www.proquest.com/', description: 'Access to a vast collection of dissertations, theses, newspapers, and scholarly journals.' },
+    { name: 'Research for Life Law Database', url: 'https://www.research4life.org/', description: 'Provides low-cost access to legal academic and professional peer-reviewed content.' },
 ];
 
 export const aiTools = [
@@ -393,15 +460,36 @@ export const legalAiTools = [
     description: 'A cloud-native e-discovery solution that uses AI to accelerate document review, search, and quality control.',
     link: 'https://www.csdisco.com/'
   },
+  {
+    name: 'Harvey AI',
+    description: 'AI platform designed for complex legal work, automating tasks for elite law firms.',
+    link: 'https://www.harvey.ai/'
+  },
+  {
+    name: 'Relativity',
+    description: 'A major e-discovery platform using AI (TAR) to find relevant documents in large litigation datasets.',
+    link: 'https://www.relativity.com/'
+  },
+  {
+    name: 'Luminance',
+    description: 'Uses AI to read and understand legal documents, providing insights for contract review and due diligence.',
+    link: 'https://www.luminance.com/'
+  },
+  {
+    name: 'Lawmatics',
+    description: 'A CRM and marketing automation platform using AI to streamline client intake and management.',
+    link: 'https://www.lawmatics.com/'
+  },
 ];
 
 export const blogPosts = [
   {
-    title: 'Navigating HeinOnline for Nigerian Legal Research',
+    title: 'Mastering HeinOnline: A Comprehensive Guide',
     category: 'Research Tips',
-    excerpt: 'A step-by-step guide to leveraging HeinOnline\'s vast database for your academic work.',
-    date: 'October 26, 2023',
+    excerpt: 'Unlock the full potential of HeinOnline with this detailed guide from the Bodleian Law Library.',
+    date: 'November 05, 2023',
     imageUrl: 'https://picsum.photos/400/250?image=101',
+    url: 'https://libguides.bodleian.ox.ac.uk/law/heinonline',
   },
   {
     title: 'The Rise of AI in Legal Practice: A Librarian\'s View',
@@ -409,13 +497,15 @@ export const blogPosts = [
     excerpt: 'Exploring the impact of artificial intelligence on legal research and the role of law librarians.',
     date: 'October 15, 2023',
     imageUrl: 'https://picsum.photos/400/250?image=102',
+    url: 'https://www.americanbar.org/groups/law_practice/publications/law_practice_magazine/2023/ja23/ai-law-practice/',
   },
   {
-    title: 'New Acquisitions: Key Texts in Environmental Law',
-    category: 'Library News',
-    excerpt: 'Discover the latest additions to our collection focusing on environmental law in West Africa.',
+    title: 'A Guide to Environmental Law in Nigeria',
+    category: 'Legal Analysis',
+    excerpt: 'An overview of the current legal framework governing environmental protection in Nigeria.',
     date: 'September 30, 2023',
     imageUrl: 'https://picsum.photos/400/250?image=103',
+    url: 'https://iclg.com/practice-areas/environment-and-climate-change-law/nigeria',
   },
 ];
 
